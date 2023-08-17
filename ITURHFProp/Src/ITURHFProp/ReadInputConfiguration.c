@@ -153,13 +153,10 @@ int ReadInputConfiguration(char InFilePath[256], struct ITURHFProp *ITURHFP, str
 					buf[1] = instr2;
 					i = 0;
 					retval = 2;
-<<<<<<< HEAD
 					while ((strlen(buf[count]) != 0) && (buf[count][0] != '/') && (retval == 2)) {
 						retval = sscanf(buf[count], "%d, %[0-9 ,]", &ITURHFP->hrs[i], buf[count^1]);
 						ITURHFP->hrs[i++] %= 24; //-= 1;
 						count ^= 1; /* swap use of the two buffers */
-=======
->>>>>>> 3549c9c (fix: change "-= 1" to "%= 24")
 					};
 				};
 			};
@@ -281,8 +278,10 @@ int ReadInputConfiguration(char InFilePath[256], struct ITURHFProp *ITURHFP, str
 					buf[1] = instr2;
 					retval = 2;
 					ITURHFP->RptFileFormat = 0;
+
 					while ((strlen(buf[count]) != 0) && (buf[count][0] != '/') && (retval == 2)) {
-						retval = sscanf(buf[count], "%s | %[a-z,A-Z _|]", optstr, buf[count^1]);
+						retval = sscanf(buf[count], "%s | %[a-z,A-Z _|02]", optstr, buf[count^1]);
+
 						ITURHFP->RptFileFormat = ITURHFP->RptFileFormat | OutputOption(optstr);
 						count ^= 1;
 					};

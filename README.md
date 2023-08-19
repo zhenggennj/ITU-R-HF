@@ -921,7 +921,7 @@ code	Noise Category
 If argument 6 is give as a negative number, the man-made noise will be set to that value where the galactic and atmospheric noise calculations are not performed. This second mode is of little value for this stand-alone program, ITURNoise.exe, running, P533.dll. Overriding the P372 calculation is included here and is consistent with some analyses desired in ITURHFProp which also uses the P372.dll. 
 
 * Argument 7 indicates the location of the required CCIR data files. The data file path must be given as a string enclosed in double quotes without trailing back slash. In the example above the location of the required CCIR data files are on **drive G:** in the directory **\User\Data**, “G:\User\Data”
-* Argument 8 allows the program to provide return data from the P.372 calculation is several formats. The table below gives the integer print flag codes. 
+* Argument 8 allows the program to provide return data from the P.372 calculation in several formats. The table below gives the integer print flag codes. 
 
 
 |code|		    Print Mode|
@@ -1145,7 +1145,8 @@ This release covers all changes identified as of Aug 2016. In addition to archit
 
 # Warranty 
 
- ---
+---
+
 The ITURHFProp, P533 and P372 software has been developed collaboratively by participants in ITU-R 
 Study Group 3. It may be used by implementers in their implementation of the Recommendation as well
 as in revisions of the specific original Recommendation and in other ITU Recommendations, free from
@@ -1158,6 +1159,7 @@ AND NON-INFRINGEMENT OF INTELLECTUAL PROPERTY RIGHTS.
 The ITU shall not be held liable in any event for any damages whatsoever (including, without 
 limitation, damages for loss of profits, business interruption, loss of information, or any other
 pecuniary loss) arising out of or related to use of the Software.
+
 ---
 
 2022 ITU-R Study Group 3

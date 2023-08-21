@@ -7,19 +7,15 @@ CFLAGS = -fPIC -Wall -Wextra -O0 -g  -fcommon
 #LDFLAGS = -lm -ldl -z muldefs
 LDFLAGS = -lm  
 RM = rm -f
-source_dir = ../Src/ITURHFProp/
+source_dir = ./
 
 prefix ?= /usr/local
 exec_prefix = $(prefix)
 bindir = $(exec_prefix)/bin
 
-TARGET = ITURHFProp
+TARGET = ITURNoise
 
-SRCS = $(source_dir)DumpPathData.c\
-	$(source_dir)ITURHFProp.c\
-	$(source_dir)ReadInputConfiguration.c\
-	$(source_dir)Report.c\
-	$(source_dir)ValidateITURHFP.c
+SRCS = 	$(source_dir)ITURNoise.c
 
 OBJS = $(SRCS:.c=.o)
 
@@ -39,4 +35,4 @@ clean:
 
 install: all
 	install -d $(DESTDIR)$(bindir)/
-	install -m 755 $(TARGET) $(DESTDIR)$(bindir)/ITURHFProp
+	install -m 755 $(TARGET) $(DESTDIR)$(bindir)/ITURNoise

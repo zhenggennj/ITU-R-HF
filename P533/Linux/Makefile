@@ -2,17 +2,20 @@ CC = gcc
 source_dir = ../Src/P533/
 bin_dir = ../Bin/
 # Use the following for testing
-#CFLAGS = -fPIC -Wall -Wextra -O0 -g -I$(source_dir)
+CFLAGS = -fPIC -Wall -Wextra -O0 -g -I$(source_dir) -fcommon
 # Use the following for production
-CFLAGS = -std=c99 -fPIC -Wall -Wextra -O2 -I$(source_dir)
+#CFLAGS = -std=c99 -fPIC -Wall -Wextra -O2 -I$(source_dir)
 
-LDFLAGS = -shared -lm -ldl -z muldefs
+#LDFLAGS = -shared -lm -ldl -z muldefs
+LDFLAGS = -shared -lm 
 RM = rm -f
-TARGET_LIB = libp533.so
+#TARGET_LIB = libp533.so
+TARGET_LIB = p533.dll
 
 prefix ?= /usr/local
 exec_prefix = $(prefix)
-libdir = $(exec_prefix)/lib
+#libdir = $(exec_prefix)/lib
+bindir = $(exec_prefix)/bin
 
 SRCS = $(source_dir)Between7000kmand9000km.c \
        $(source_dir)ELayerScreeningFrequency.c \
@@ -53,5 +56,5 @@ clean:
 	${RM} ${TARGET_LIB}
 
 install: all
-	install -d $(DESTDIR)$(libdir)/
-	install -m 755 $(TARGET_LIB) $(DESTDIR)$(libdir)/$(TARGET_LIB)
+	install -d $(DESTDIR)$(bindir)/
+	install -m 755 $(TARGET_LIB) $(DESTDIR)$(bindir)/$(TARGET_LIB)

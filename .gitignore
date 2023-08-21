@@ -360,3 +360,11 @@ MigrationBackup/
 FodyWeavers.xsd
 
 #P372/Src/AtmosPlots/P372_figures
+
+# object files and depedents
+*.o
+*.d
+*.dll
+*.so
+*.exe
+

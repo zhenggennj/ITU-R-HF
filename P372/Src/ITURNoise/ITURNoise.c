@@ -229,7 +229,8 @@ int main(int argc, char* argv[]) {
 			dllP372Version = (cP372Info)GetProcAddress((HMODULE)hLib, "P372Version");
 			// Get the P372CompileTime() process from the DLL.
 			dllP372CompileTime = (cP372Info)GetProcAddress((HMODULE)hLib, "P372CompileTime");
-			dllMakeNoise = (iMakeNoise)GetProcAddress((HMODULE)hLib, "__MakeNoise@52");
+			//dllMakeNoise = (iMakeNoise)GetProcAddress((HMODULE)hLib, "__MakeNoise@52");
+			dllMakeNoise = (iMakeNoise)GetProcAddress((HMODULE)hLib, "MakeNoise");
 #elif __linux__ || __APPLE__
 			void* hLib;
 			hLib = dlopen("libp372.so", RTLD_NOW);

@@ -902,7 +902,7 @@ C:\>ITURNoise 1 1  1.0 40.0 165.0 1.0 "G:\User\Data"  0
 ```
 
 * Argument 1 is an integer that indicates the month (1 to 12) of interest. In the example above the desired month is January. 
-* Argument 2 is an integer that indicates the hour (1 to 24) UTC at the receive point. In most cases this will require the calculation of the time UTC from the longitude at that receive point. In the example above the receive point is 11 hours (165°E/15°=11) ahead of UTC so to determine the noise for the 12th local time hour the 1st hour UTC is chosen.
+* Argument 2 is an integer that indicates the hour (0 to 23) UTC at the receive point. In most cases this will require the calculation of the time UTC from the longitude at that receive point. In the example above the receive point is 11 hours (165°E/15°=11) ahead of UTC so to determine the noise for 12:00 local time hour 1:00 UTC is chosen.
 * Argument 3 is a float that indicates the frequency (MHz). In the example above the frequency desired is 1.0MHz
 * Argument 4 is a float that indicates the latitude (degrees). In the example above the latitude desired is 40°N. 
 * Argument 5 is a float that indicates the longitude (degrees). In the example above the longitude desired is 165° E
@@ -945,7 +945,7 @@ Example ITURNoise() Output
         P372 Compile Time: Wed Jul  1 11:00:38 2020
 **********************************************************
 
-        JANUARY  : 14 (UTC)
+        JANUARY  : 1 (UTC)
         40.0000 (deg lat) 165.0000 (deg long)
         1.000 (MHz)
 
